@@ -1,0 +1,11 @@
+{application,eaoi,
+             [{description,"An OTP application"},
+              {vsn,"0.1.0"},
+              {registered,[]},
+              {mod,{eaoi_app,[]}},
+              {applications,[kernel,stdlib]},
+              {env,[]},
+              {modules,[eaoi,eaoi_app,eaoi_room,eaoi_sup,eaoi_zone]},
+              {maintainers,[]},
+              {licenses,["Apache 2.0"]},
+              {links,[]}]}.
