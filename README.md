@@ -20,16 +20,16 @@ Build
     > eaoi:eventMon(1,1,10,20,[{pk,123}]).
     > eaoi:eventDrop(1,1,10,20,[{pk,123}]).
     
-    > eaoi:add(1,1,{player,1},socket,pid,10,20,<<"all_attr_player1">>).
-    > eaoi:add(1,1,{player,2},socket,pid,10,21,<<"all_attr_player2">>).
-    > eaoi:move(1,1,{player,1},socket,pid,10,20,10,21,<<"remove_player1">>,<<"move_player1">>,<<"all_attr_player1">>).
-    > eaoi:update(1,1,{player,1},socket,pid,10,21,<<"update_player2">>,<<"all_attr_player2">>).
+    > eaoi:add(1,1,{player,1},node,socket,pid,10,20,<<"all_attr_player1">>).
+    > eaoi:add(1,1,{player,2},node,socket,pid,10,21,<<"all_attr_player2">>).
+    > eaoi:move(1,1,{player,1},node,socket,pid,10,20,10,21,<<"remove_player1">>,<<"move_player1">>,<<"all_attr_player1">>).
+    > eaoi:update(1,1,{player,1},node,socket,pid,10,21,<<"update_player2">>,<<"all_attr_player2">>).
     > eaoi:event(1,1,10,20,[{pk,123}]).
     
     > eaoi:send_by_view(1,1,10,20,<<"hello">>).
     
     
-    > eaoi:remove(1,1,{player,2},socket,10,21,<<"remove_player2">>).
+    > eaoi:remove(1,1,{player,2},node,socket,10,21,<<"remove_player2">>).
     > eaoi:removeMon(1,1,{mon,1},10,21,<<"remove_mon">>).
     > eaoi:removeDrop(1,1,{drop,1},10,21,<<"remove_drop">>).
     > eaoi:destroy(1,1).
@@ -58,13 +58,13 @@ Build
 	%% 玩家 - 事件
 	eaoi:event(Map_id,Copy_id,X,Y,Event_list).
 	%% 玩家 - 删
-	eaoi:remove(Map_id,Copy_id,Id,Socket,X,Y,Packet_remove).
+	eaoi:remove(Map_id,Copy_id,Id,Node,Socket,X,Y,Packet_remove).
 	%% 玩家 - 增
-	eaoi:add(Map_id,Copy_id,Id,Socket,Pid,X,Y,Packets).
+	eaoi:add(Map_id,Copy_id,Id,Node,Socket,Pid,X,Y,Packets).
 	%% 玩家 - 移
-	eaoi:move(Map_id,Copy_id,Id,Socket,Pid,O_X,O_Y,X,Y,Packet_remove,Packet_move,Packets).
+	eaoi:move(Map_id,Copy_id,Id,Node,Socket,Pid,O_X,O_Y,X,Y,Packet_remove,Packet_move,Packets).
 	%% 玩家 - 改
-	eaoi:update(Map_id,Copy_id,Id,Socket,Pid,X,Y,Packet_update,Packets).
+	eaoi:update(Map_id,Copy_id,Id,Node,Socket,Pid,X,Y,Packet_update,Packets).
 	
 	%% Mon - 事件
 	eaoi:eventMon(Map_id,Copy_id,X,Y,Event_list).
